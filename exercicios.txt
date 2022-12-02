@@ -1,0 +1,13 @@
+Para os próximos exercícios, elabore a função pedida, deixando claro como seria a chamada no programa 
+principal. NÃO É NECESSÁRIO CRIAR O PROGRAMA PRINCIPAL 
+ 
+ELABORE UMA FUNÇÃO QUE: 
+a. Tenha como parâmetro uma fila. Retire os valores da fila e coloque-os em uma pilha 
+b. Transforme uma pilha em fila onde o topo da pilha é o início da fila 
+c. Transforme uma pilha em fila onde o topo da pilha é o fim da fila 
+d. Tenha  como  parâmetro  duas  filas  F1  e  F2.  Cada  uma  das  filas  não  possui  elementos  repetidos. 
+Construa uma terceira fila (F3) que possua todos os elementos de F1 e F2, mas sem repetir números 
+e. Determine a quantidade de nós que existem na árvore 
+f. Retorne a quantidade de folhas de uma árvore 
+g. Determine o nível de um certo nó, se ele existir na árvore 
+h. Determine a quantidade de descendentes de um certo nó, se ele existir na árvore 
