@@ -229,26 +229,30 @@ Fila *ex6_D(Fila *f,Fila *f2)//Mescla duas filas sem repetir numeros
     No *q;
     int num=0,flag=0;
     Fila *f3=CriaFila();
-    f3=f; 
-    num=RetiraFila(f2);
-
+    while(VaziaFila(f)!=1)
+    {
+        num=RetiraFila(f);
+        InsereFila(f3,num);
+    }
     while(VaziaFila(f2)!=1)
     {
-        
+        num=RetiraFila(f2);
+        flag=0;
         for (q=f3->ini; q!=NULL; q=q->prox)
         {
-            if(q->info!=num){
-                if(q->prox==NULL){
-                InsereFila(f3,num);
-                q=f3->ini;
-                num=RetiraFila(f2);
-                }
+            if(q->info==num)
+            {
+                flag=1;
             }
         }
-        
+        if(flag==0)
+        {
+            InsereFila(f3,num);
+        }
     }
     return f3;
 }
+
 int main ()
 {
     system("cls");
@@ -256,6 +260,7 @@ int main ()
     Fila *F = CriaFila();
     Fila *F2=CriaFila();
     Fila *F3=CriaFila();
+    //dados para testar
    /* 
     push(P,13);
     push(P,10);
@@ -264,7 +269,8 @@ int main ()
     push(P,33);
     push(P,22);
     push(P,15);
-    */    
+    */
+
     InsereFila(F,10);
     InsereFila(F,12);
     InsereFila(F,54);
@@ -274,9 +280,8 @@ int main ()
     InsereFila(F2,14);
     InsereFila(F2,32);
     InsereFila(F2,54);
-    InsereFila(F2,35);
+    InsereFila(F2,33);
     InsereFila(F2,24);
-
 
     //P=ex6_A(F);
     //F=ex6_B(P);
@@ -289,12 +294,13 @@ int main ()
     printf("\n \nImprimindo a Fila 2...\n");
     imprimeFila(F2);
    
-    //printf("\n \nImprimindo a Fila 3...\n");
-    //imprimeFila(F3);
+    printf("\n \nImprimindo a Fila 3...\n");
+    F3=ex6_D(F,F2);
+    imprimeFila(F3);
 
     //("\n \nImprimindo a Pilha...\n \n ");
     //imprimePilha(P);
-        
+    
     liberaFila(F);
     liberaPilha(P);
     return 0;
