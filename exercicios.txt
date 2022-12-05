@@ -171,4 +171,41 @@ int noNivel (NoArv *Pai, int num)
 
 h. Determine a quantidade de descendentes de um certo nó, se ele existir na árvore
 
+int NosDescendentes (NoArv *Pai, int num)
+{
+    int descendente=-1;
+    int flag =1;
+    while(flag==1)
+    {
+        if(Pai->info==num)
+        {
+            if (num>Pai->info)
+            {
+                if(Pai->dir!=NULL)
+                {        
+                    descendente+=1;
+                    Pai=Pai->dir;
+                }else if(Pai->esq!=NULL)
+                {
+                    descendente+=1;
+                    Pai=Pai->esq;
+                }
+                flag=0;
+            }   
+        }else{
+            if (num>Pai->info)
+            {
+                if(Pai->dir!=NULL)
+                {        
+                    Pai=Pai->dir;
+                }else if(Pai->esq!=NULL)
+                {
+                    Pai=Pai->esq;
+                }
+                flag=0;
+            }
+        }
+    }
+    return descendente;
+}
 
